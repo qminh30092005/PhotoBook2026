@@ -1,7 +1,7 @@
 :root{--lp-unit:clamp(.78rem,min(.92vw,1.8svh),1rem)}
-.lp-nav,.lp-main{max-width:calc(87.5 * var(--lp-unit));margin:auto;padding-inline:clamp(18px,5vw,calc(5.25 * var(--lp-unit)))}
+.lp-main{max-width:calc(87.5 * var(--lp-unit));margin:auto;padding-inline:clamp(18px,5vw,calc(5.25 * var(--lp-unit)))}
 .lp-nav,.lp-sections,.lp-actions,.lp-display figcaption,.lp-controls{display:flex;align-items:center}
-.lp-nav{min-height:calc(4.875 * var(--lp-unit));gap:34px;border-bottom:1px solid var(--line)}
+.lp-nav{padding-inline:clamp(12px,2vw,24px);min-height:calc(4.875 * var(--lp-unit));gap:34px;border-bottom:1px solid var(--line)}
 .lp-brand{font:500 1.55rem/1 var(--ui);letter-spacing:-.075em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .lp-nav .account-nav{margin-left:auto}
 .lp-sections{gap:22px}
