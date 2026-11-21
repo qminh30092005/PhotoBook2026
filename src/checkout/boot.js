@@ -26,7 +26,7 @@
     }
   }
   if (!S.book?.spreads?.length) {
-    page.innerHTML = '<h1>Chưa có sách để thanh toán</h1><a class="pill" href="/">Chọn mẫu bìa</a>';
+    page.innerHTML = '<h1>Chưa có sách để thanh toán</h1><a class="pill" href="/thiet-ke">Chọn mẫu bìa</a>';
     return;
   }
   S.screen = 'editor';

@@ -1,20 +1,20 @@
-/* Giao diện: nền trắng, chữ xanh mực, điểm nhấn hồng mâm xôi. */
+/* Giao diện: nền hồng phấn, chữ đỏ rượu, điểm nhấn vàng nghệ. */
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f5f5f4;
-  --bg-sunk: #efefee;
-  --line: #e4e4e2;
-  --line-strong: #b9b9b6;
-  --ink: #0c1728;
-  --ink-2: #465263;
-  --ink-3: #586576;
+  --bg: #F3DDE2;
+  --bg-soft: #fbf2f4;
+  --bg-sunk: #ead0d8;
+  --line: #d9b9c4;
+  --line-strong: #a77b8c;
+  --ink: #591D35;
+  --ink-2: #704053;
+  --ink-3: #794e60;
   --pill: var(--ink);
-  --on-pill: #ffffff;
-  --accent: #b51c50;
-  --accent-soft: #fbeff3;
+  --on-pill: var(--bg);
+  --accent: #E5AC32;
+  --accent-soft: #f9ebc9;
   --ok: var(--ink);
-  --warn: var(--accent);
-  --stage: #f2f2f1;
+  --warn: var(--ink);
+  --stage: #e9d2d9;
   --endpaper: #3d3d3d;
   --ui: 'Montserrat', system-ui, sans-serif;
   --head: 'Mulish', 'Montserrat', system-ui, sans-serif;
@@ -49,7 +49,7 @@ button {
   cursor: pointer;
 }
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--ink);
   outline-offset: 2px;
 }
 .hidden {
@@ -71,7 +71,8 @@ button {
   letter-spacing: -0.01em;
 }
 .pill:hover {
-  background: #000;
+  background: var(--accent);
+  color: var(--ink);
 }
 .pill:disabled {
   opacity: 0.35;

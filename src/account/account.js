@@ -25,7 +25,7 @@ let session;
 function showAccount() {
   if (!customerUser) return showForm();
   shell(
-    '<h1>Tài khoản của tôi</h1><p id="identity"></p><a class="account-primary" href="/">Tiếp tục thiết kế</a><button id="logout" class="text-action">Đăng xuất</button><p role="status"></p>',
+    '<h1>Tài khoản của tôi</h1><p id="identity"></p><a class="account-primary" href="/thiet-ke">Tiếp tục thiết kế</a><button id="logout" class="text-action">Đăng xuất</button><p role="status"></p>',
   );
   root.querySelector('#identity').textContent =
     customerUser.email || customerUser.displayName || 'Đã đăng nhập';

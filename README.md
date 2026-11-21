@@ -4,7 +4,8 @@ Web đặt photobook: khách chọn mẫu bìa, tải ảnh, tự thiết kế, 
 
 | Trang | Đường dẫn | Dành cho |
 |---|---|---|
-| Trang khách | `/` | Khách thiết kế và đặt sách |
+| Trang chủ | `/` | Giới thiệu photobook và xem mẫu bìa |
+| Thiết kế | `/thiet-ke` | Chọn bìa, tạo sách và tiếp tục bản nháp |
 | Admin | `/admin` | Shop (mật khẩu nằm trong Script Properties của Apps Script) |
 | Duyệt | `/duyet?o=MÃ_ĐƠN&k=KHÓA` | Khách duyệt bản thiết kế (link do admin gửi) |
 
@@ -14,7 +15,8 @@ Link cũ dạng `/admin.html`, `/duyet.html?...` vẫn chạy (Vercel tự chuy�
 
 ```
 src/shared/     Cấu hình shop, API, lưu bản nháp và giao diện dùng chung
-src/shop/       Trang khách, nhập ảnh và điều hướng
+src/landing/    Nội dung, giao diện và bộ sưu tập bìa trên trang chủ
+src/shop/       Chọn mẫu bìa, nhập ảnh và điều hướng thiết kế
 src/book/       Mẫu bìa, nội dung sách, dàn trang và kiểm tra ảnh
 src/editor/     Trình thiết kế, thanh công cụ, thao tác kéo thả và xem trước
 src/checkout/   Đặt sách và thanh toán

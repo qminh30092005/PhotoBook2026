@@ -1,5 +1,5 @@
 function siteHeader(left, sub) {
-  return `<header class="shop-top wrap"><div class="top-l">${left || ''}<div class="logo"><b>our</b> archive</div>${sub ? `<span class="muted top-sub">${sub}</span>` : ''}</div><nav class="account-nav" aria-label="Tài khoản">${typeof customerNav === 'function' ? customerNav() : '<a href="/">Về cửa hàng</a>'}</nav></header>`;
+  return `<header class="shop-top wrap"><div class="top-l">${left || ''}<a class="logo" href="/" style="color:inherit;text-decoration:none"><b>our</b> archive</a>${sub ? `<span class="muted top-sub">${sub}</span>` : ''}</div><nav class="account-nav" aria-label="Tài khoản">${typeof customerNav === 'function' ? customerNav() : '<a href="/">Về cửa hàng</a>'}</nav></header>`;
 }
 const toast = (t) => {
   const el = $('#toast');

@@ -128,7 +128,24 @@ const core = [
   'checkout/order',
 ];
 const noindex = '<meta name="robots" content="noindex,nofollow">';
-page('index.html', [...core, 'account/customer-session', 'shop/boot'], 'Our Archive · photobook cặp đôi', '<meta name="description" content="Photobook cặp đôi in tại Hà Nội · tự thiết kế trong vài phút">');
+// Render the real catalog covers once so the introduction is visible before JavaScript loads.
+const coverContext = require('node:vm').createContext({});
+for (const name of ['shared/config', 'book/data', 'book/art', 'book/book']) {
+  require('node:vm').runInContext(mod(name), coverContext);
+}
+const samples = require('node:vm').runInContext(`
+  ['hoian', 'dalat', 'camera'].map(id => {
+    const template = tplOf(id);
+    return { name: template.name, html: pageHTML({ bg: template.bg, frames: [], els: frontEls(template) }, 300) };
+  })
+`, coverContext);
+const covers = samples.map(({name, html}, position) =>
+  `<div class="lp-cover" data-position="${position}" data-name="${name}" aria-hidden="true">${html}</div>`
+).join('');
+page('index.html', ['shared/config', 'account/customer-session', 'landing/gallery'], 'Our Archive · Photobook cặp đôi',
+  '<meta name="description" content="Khám phá photobook bìa cứng của Our Archive. Chọn bìa, kể chuyện bằng ảnh và xem lại cuốn sách trước khi in."><style>' + read('landing/landing.css') + '</style>',
+  read('landing/index.html').replace('<!-- covers -->', () => covers));
+page('thiet-ke.html', [...core, 'account/customer-session', 'shop/boot'], 'Thiết kế photobook · Our Archive', noindex);
 page('thanh-toan.html', [...core, 'checkout/boot'], 'Thanh toán · Our Archive', noindex);
 page('admin.html', [...core, 'admin/pdf', 'admin/admin'], 'Our Archive · admin', noindex);
 page('duyet.html', [...core, 'review/duyet'], 'Our Archive · duyệt cuốn sách', noindex);

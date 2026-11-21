@@ -116,7 +116,7 @@ function renderOrderForm(d) {
      ${policyHTML()}
      <p id="oErr" class="err" role="alert"></p>
      <button class="pill block" id="confirm">Xác nhận đặt sách</button>
-     <a class="ghost" href="/">Quay lại sửa sách</a>
+     <a class="ghost" href="/thiet-ke">Quay lại sửa sách</a>
    </aside></div>`;
   const read = () => {
     F.name = d.querySelector('#oName').value.trim();
@@ -265,7 +265,7 @@ function doneScreen(d, code, Q, F, restored = false) {
     </div></div>
    <button class="pill block" id="cpOrder">${ic('copy')} Copy thông tin đơn gửi qua Zalo</button>
    ${CONFIG.SHOP_ZALO ? `<a class="ghost" style="width:100%" href="https://zalo.me/${encodeURIComponent(CONFIG.SHOP_ZALO)}" target="_blank" rel="noopener">Nhắn Zalo cho Our Archive</a>` : ''}
-   <a class="ghost" href="/">Về bản thiết kế</a>`;
+   <a class="ghost" href="/thiet-ke">Về bản thiết kế</a>`;
   d.querySelector('#cpOrder').onclick = () => copyText(txt);
   d.querySelectorAll('[data-cp]').forEach(
     (b) =>

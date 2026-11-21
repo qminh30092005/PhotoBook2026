@@ -8,7 +8,7 @@
   white-space: nowrap;
   border-radius: 99px;
   padding: 11px 15px;
-  background: #fff;
+  background: var(--bg-soft);
   color: var(--ink);
   font-weight: 700;
   text-decoration: none;
@@ -19,7 +19,7 @@
 }
 .account-nav a:last-child {
   background: var(--ink);
-  color: white;
+  color: var(--on-pill);
 }
 .shop-links {
   justify-content: center;

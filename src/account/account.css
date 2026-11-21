@@ -5,7 +5,7 @@ body:has(.policy-page) {
 }
 .account-card,
 .policy-page {
-  background: white;
+  background: var(--bg-soft);
   max-width: 556px;
   margin: clamp(0px, 5vh, 60px) auto;
   padding: clamp(22px, 5vw, 40px);
@@ -52,7 +52,7 @@ body:has(.policy-page) {
 .social button {
   flex: 1;
   border: 1px solid var(--line-strong);
-  background: white;
+  background: var(--bg-soft);
   color: var(--ink);
 }
 .social b {
@@ -95,7 +95,7 @@ body:has(.policy-page) {
 }
 .account-field input {
   width: 100%;
-  background: white;
+  background: var(--bg-soft);
   border: 0;
   padding: 4px 36px 3px 0;
   font-size: 16px;
@@ -130,7 +130,7 @@ body:has(.policy-page) {
 .consent input {
   width: 20px;
   height: 20px;
-  accent-color: var(--accent);
+  accent-color: var(--ink);
   flex: none;
 }
 .text-action {
@@ -148,7 +148,7 @@ body:has(.policy-page) {
 .account-card a.account-primary {
   width: 100%;
   background: var(--ink);
-  color: white;
+  color: var(--on-pill);
   border: 0;
   text-decoration: none;
 }
@@ -188,7 +188,7 @@ body:has(.policy-page) {
 
 .account-card .switch-account a,
 .policy-page > a:last-child {
-  color: var(--accent);
+  color: var(--ink);
 }
 .account-field:focus-within {
   box-shadow: inset 3px 0 var(--accent);
