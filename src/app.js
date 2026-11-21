@@ -68,15 +68,14 @@ function renderShop(){if(!renderShop._t){renderShop._t=1;track('view_product',{}
     <section class="shop-info">
       <h1>Photobook cặp đôi</h1>
       <div class="price-line"><span class="muted" style="font-weight:600">${t.pages} trang · </span><span class="big">${vnd(t.price)}</span> <span class="badge">Cọc 50%: ${vnd(dep(t.price))}</span></div>
-      <div class="divider-t">Chọn số trang</div>
-      <div class="tiers">${TIERS.map(x=>`<button class="tier${x.id===S.tier?' on':''}" data-tier="${x.id}">
-        <div class="tier-books">${'<i></i>'.repeat(x.id===24?1:x.id===32?2:3).replace(/<i><\/i>/g,(m,o)=>`<i style="height:${30+(o%3)*4}px;background:${tp.bg};box-shadow:inset 3px 0 0 rgba(0,0,0,.1),0 0 0 1px rgba(0,0,0,.06)"></i>`)}</div>
-        ${x.tag?`<span class="tag">${x.tag}</span>`:'<span style="height:16px"></span>'}<b>${x.pages} trang</b><span class="tp">${vnd(x.price)}</span><small>Tối đa ${x.max} ảnh<br>${x.motifs} mẫu hình vẽ</small></button>`).join('')}</div>
-      <span class="note-chip">Ship 20k nội thành Hà Nội · 30k tỉnh khác · chuyển khoản đủ 100% được miễn ship · tặng ${t.gift}</span><span class="note-chip">Từ cuốn thứ 2 cùng thiết kế giảm ${Math.round(CONFIG.SECOND_COPY_DISCOUNT*100)}% · giao ${CONFIG.DELIVERY_DAYS} sau khi hai bạn duyệt bản thiết kế</span>
-      <p class="muted" style="margin:0;font-size:12px">Chọn một mẫu bìa, bấm “Bắt đầu thiết kế”, mẫu sẽ hiện sẵn trong trình thiết kế để hai bạn sửa chữ, đổi hình.</p>
       <div class="tpl-box"><label class="search">${ic('search')}<input id="q" placeholder="Tìm mẫu bìa cho kỷ niệm của hai bạn" value="${esc(q)}"></label>
         <div class="tpl-grid">${list.map(x=>`<button class="tpl${x.id===S.tpl?' on':''}" data-tpl="${x.id}">${miniBook(x,78)}<span>${x.name}</span></button>`).join('')||'<p class="muted">Không tìm thấy mẫu nào.</p>'}</div></div>
+      <div class="divider-t">Chọn số trang</div>
+      <div class="tiers">${TIERS.map(x=>`<button class="tier${x.id===S.tier?' on':''}" data-tier="${x.id}">
+        ${x.tag?`<span class="tag">${x.tag}</span>`:''}<b>${x.pages} trang</b><span class="tp">${vnd(x.price)}</span><small>Tối đa ${x.max} ảnh · ${x.motifs} hình vẽ</small></button>`).join('')}</div>
       <button class="pill block" id="start">Bắt đầu thiết kế</button>
+      <p class="muted" style="margin:0;font-size:12px">Chọn một mẫu bìa, bấm “Bắt đầu thiết kế”, mẫu sẽ hiện sẵn trong trình thiết kế để hai bạn sửa chữ, đổi hình.</p>
+      <span class="note-chip">Ship 20k nội thành Hà Nội · 30k tỉnh khác · chuyển khoản đủ 100% được miễn ship · tặng ${t.gift}</span><span class="note-chip">Từ cuốn thứ 2 cùng thiết kế giảm ${Math.round(CONFIG.SECOND_COPY_DISCOUNT*100)}% · giao ${CONFIG.DELIVERY_DAYS} sau khi hai bạn duyệt bản thiết kế</span>
       <div class="specs"><span>Khổ</span><b>B5 nhỡ 16,5 × 23,5 cm</b><span>Bìa</span><b>Bìa cứng matte, gáy vuông</b><span>Ruột</span><b>Giấy mỹ thuật 200gsm</b><span>Số trang</span><b>${t.pages} trang · tối đa ${t.max} ảnh</b><span>Hình vẽ</span><b>${t.motifs} mẫu · tối đa ${t.stickers} hình trên cả quyển</b></div>
     </section>
   </main>`;
