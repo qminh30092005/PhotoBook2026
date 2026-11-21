@@ -30,6 +30,10 @@
   height: 64px;
   border-bottom: 1px solid var(--line);
 }
+.adm-top > .archive-signature {
+  width: clamp(72px, 16vw, 128px);
+  height: auto;
+}
 .adm-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));

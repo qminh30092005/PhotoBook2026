@@ -73,15 +73,16 @@
   }
   .ed {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: 52px minmax(0, 1fr) 92px auto;
+    grid-template-rows: auto minmax(0, 1fr) 92px auto;
     grid-template-areas: 'top' 'stage' 'film' 'tabs';
   }
   .ed-top {
-    padding: 0 8px;
+    padding: 6px 8px;
+    flex-wrap: wrap;
     gap: 2px;
   }
   .ed-top .logo {
-    display: none;
+    flex-basis: 100%;
   }
   .ed-top .tb {
     min-width: 38px;

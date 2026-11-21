@@ -1,7 +1,7 @@
 /* Điểm vào của trang thanh toán. Bản thiết kế được lưu trước khi rời editor. */
 (async () => {
   document.body.insertAdjacentHTML('beforeend', '<div class="toast" id="toast" role="status"></div>');
-  app().innerHTML = '<main class="checkout-page dlg"><p role="status">Đang mở bản thiết kế…</p></main>';
+  app().innerHTML = siteHeader() + '<main class="checkout-page dlg"><p role="status">Đang mở bản thiết kế…</p></main>';
   const page = document.querySelector('.checkout-page');
   const demo = checkoutDemo;
   if (demo) {
