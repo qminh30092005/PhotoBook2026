@@ -17,7 +17,7 @@
   --stage: #e9d2d9;
   --endpaper: #3d3d3d;
   --ui: 'Montserrat', system-ui, sans-serif;
-  --head: 'Mulish', 'Montserrat', system-ui, sans-serif;
+  --head: var(--ui);
   --r-sm: 8px;
   --r-md: 12px;
   --r-lg: 18px;

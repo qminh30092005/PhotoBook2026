@@ -21,6 +21,11 @@
   letter-spacing: -0.02em;
   color: var(--ink-3);
 }
+.archive-signature {
+  width: auto;
+  height: 1.6em;
+  vertical-align: middle;
+}
 .logo b {
   color: var(--ink);
 }

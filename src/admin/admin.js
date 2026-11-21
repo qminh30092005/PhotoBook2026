@@ -58,7 +58,7 @@ function render() {
 }
 function admRender() {
   if (!CONFIG.API_URL) {
-    app().innerHTML = `<div class="adm-center"><div class="logo"><b>our</b> archive</div><h1>Admin</h1><p class="muted">Để quản lý đơn, hãy kết nối Apps Script qua <b>API_URL</b> theo hướng dẫn trong docs/huong-dan-cai-dat.md.</p><a class="ghost" href="/">Về trang khách hàng</a></div>`;
+    app().innerHTML = `<div class="adm-center"><div class="logo"><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"></div><h1>Admin</h1><p class="muted">Để quản lý đơn, hãy kết nối Apps Script qua <b>API_URL</b> theo hướng dẫn trong docs/huong-dan-cai-dat.md.</p><a class="ghost" href="/">Về trang khách hàng</a></div>`;
     return;
   }
   if (!ADM.auth) ADM.view = 'login';
@@ -68,7 +68,7 @@ function admRender() {
   if (ADM.view === 'editor') return renderEditor();
 }
 function admLogin() {
-  app().innerHTML = `<form class="adm-center" id="lg"><div class="logo"><b>our</b> archive</div><h1>Quản trị đơn sách</h1><a href="/" class="muted">Về trang khách hàng</a>
+  app().innerHTML = `<form class="adm-center" id="lg"><div class="logo"><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"></div><h1>Quản trị đơn sách</h1><a href="/" class="muted">Về trang khách hàng</a>
    <label class="fld" style="width:100%"><span>Mật khẩu</span><input type="password" id="pw" autocomplete="current-password" required></label>
    <p class="err" id="lgErr"></p><button class="pill block">Vào trang quản lý</button></form>`;
   $('#pw').focus();
@@ -142,7 +142,7 @@ function admList() {
   );
   const maxS = Math.max(1, ...Object.values(st.byStatus));
   app().innerHTML = `<div class="adm">
-   <header class="adm-top"><div class="logo"><b>our</b> archive <span class="faint" style="font-size:13px;font-weight:700">· quản lý đơn</span></div>
+   <header class="adm-top"><div class="logo"><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"> <span class="faint" style="font-size:13px;font-weight:700">· quản lý đơn</span></div>
      <div style="display:flex;gap:8px"><button class="ghost sm" id="reload">Tải lại</button><button class="ghost sm" id="logout">Đăng xuất</button></div></header>
    <section class="adm-stats">
      <div class="kpi dark"><span>Đơn (không tính hủy)</span><b>${st.orders}</b></div>
@@ -286,7 +286,7 @@ function admOrder() {
   const t = tierOf(d.design.tier),
     inspection = inspectDesign(d.design);
   app().innerHTML = `<div class="adm">
-   <header class="adm-top"><button class="ghost sm" id="back">${ic('left')} danh sách</button><div class="logo">${esc(o['mã đơn'])}</div><span></span></header>
+   <header class="adm-top"><button class="ghost sm" id="back">${ic('left')} danh sách</button><div class="logo">${esc(o['mã đơn'])}</div><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"></header>
    <section class="print-inspector"><h2>Kiểm tra trước khi in</h2>
     <div class="print-spec"><span><b>${inspection.filled} / ${inspection.total}</b> khung có ảnh</span><span><b>${t.pages}</b> trang ruột</span><span>Gáy <b>${PRINT.spine[t.pages]} mm</b></span><span>Khổ <b>${PRINT.trimW} × ${PRINT.trimH} mm</b></span></div>
     ${inspection.missing.length ? `<h3>Trang còn khung trống</h3><div class="missing-pages">${inspection.missing.map((item) => `<button class="ghost sm" data-spread="${item.index}">${esc(item.label)} · thiếu ${item.empty}</button>`).join('')}</div>` : '<p>Tất cả khung đã có ảnh.</p>'}

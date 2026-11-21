@@ -1,3 +1,4 @@
+import archiveLogo from '../../src/our-archive.svg';
 import { Wallet, Shield, Target, TrendingUp, Users, Package, Megaphone, Film, CheckSquare, Coins, Gift } from "lucide-react";
 import { FinanceTab } from "./tabs/FinanceTab";
 import { SafeTab } from "./tabs/SafeTab";
@@ -63,7 +64,7 @@ export default function App() {
         <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3 px-5 pb-4 pt-5">
           <div className="flex items-center gap-3">
             <div>
-              <h1 className="text-2xl font-black leading-none tracking-tight text-[#9A9A97]"><span className="text-[#2E2E2E]">our</span> archive</h1>
+              <h1><img src={archiveLogo} width="151" height="36" alt="Our Archive" /></h1>
               <div className="mt-1 text-xs font-medium text-[#6B6B69]">Photobook cặp đôi · B5 nhỡ · in tại Hà Nội · Dashboard khởi nghiệp</div>
             </div>
           </div>

@@ -24,6 +24,9 @@ body:has(.policy-page) {
   font-weight: 650;
   text-underline-offset: 3px;
 }
+.back-shop .archive-signature {
+  height: 32px;
+}
 .back-shop {
   display: inline-block;
   margin-bottom: 20px;
@@ -62,55 +65,6 @@ body:has(.policy-page) {
 .facebook {
   color: var(--ink);
 }
-.or {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--ink-2);
-  margin: 20px 0;
-  font-size: 12px;
-}
-.or:before,
-.or:after {
-  content: '';
-  flex: 1;
-  border-top: 1px solid var(--line-strong);
-}
-.fields {
-  border: 1px solid var(--line-strong);
-  border-radius: 12px;
-}
-.account-field {
-  position: relative;
-  padding: 12px 15px;
-}
-.account-field + .account-field {
-  border-top: 1px solid var(--line-strong);
-}
-.account-field label {
-  display: block;
-  color: var(--ink-2);
-  font-weight: 650;
-  font-size: 12px;
-}
-.account-field input {
-  width: 100%;
-  background: var(--bg-soft);
-  border: 0;
-  padding: 4px 36px 3px 0;
-  font-size: 16px;
-}
-.eye {
-  position: absolute;
-  right: 6px;
-  bottom: 6px;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  background: none;
-  border: 0;
-}
 .fine,
 .consent,
 .switch-account,
@@ -141,9 +95,6 @@ body:has(.policy-page) {
   text-decoration: underline;
   font-weight: 600;
 }
-.reset {
-  margin: 8px 0 0 auto;
-}
 .account-primary,
 .account-card a.account-primary {
   width: 100%;
@@ -151,11 +102,6 @@ body:has(.policy-page) {
   color: var(--on-pill);
   border: 0;
   text-decoration: none;
-}
-.account-primary:disabled {
-  background: #e2e5ea;
-  color: var(--ink-2);
-  cursor: default;
 }
 .switch-account {
   text-align: center;
@@ -189,9 +135,6 @@ body:has(.policy-page) {
 .account-card .switch-account a,
 .policy-page > a:last-child {
   color: var(--ink);
-}
-.account-field:focus-within {
-  box-shadow: inset 3px 0 var(--accent);
 }
 .social button:hover {
   box-shadow: inset 0 0 0 2px var(--accent);

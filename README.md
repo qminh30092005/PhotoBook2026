@@ -94,6 +94,6 @@ Ra file `dashboard/dashboard.html` tự chứa, mở thẳng bằng trình duy�
 Trang chủ có hai lối vào `/dang-nhap` và `/dang-ky`. Tài khoản khách dùng Firebase Authentication. Bản thiết kế tiếp tục lưu trên trình duyệt đang sử dụng.
 
 1. Tạo Web App trong Firebase Project settings. Chép bốn giá trị cấu hình công khai vào các biến `FIREBASE_*` trong [.env.example](.env.example), trên máy dùng file `.env`, trên Vercel dùng Environment Variables.
-2. Trong Authentication → Sign-in method, bật Email/Password, Google và Facebook. Đặt chính sách mật khẩu tối thiểu 8 ký tự trong Firebase. Thêm tên miền cửa hàng vào Authorized domains, thêm localhost nếu thử trên máy.
+2. Trong Authentication → Sign-in method, bật Google và Facebook. Với Google, chọn email hỗ trợ của dự án rồi lưu. Thêm tên miền cửa hàng vào Authorized domains, thêm localhost nếu thử trên máy.
 3. Với Facebook, nhập App ID và App Secret của ứng dụng Meta vào phần cấu hình nhà cung cấp **trong Firebase Console**. Chép OAuth redirect URI Firebase hiển thị vào Valid OAuth Redirect URIs của Facebook Login. Đặt Privacy Policy URL trỏ tới `/chinh-sach-du-lieu` trên tên miền HTTPS của shop, User Data Deletion Instructions URL trỏ tới cùng trang với `#xoa-du-lieu`. Bật chế độ Live khi mở cho khách.
 4. Điền `SHOP_PRIVACY_EMAIL` bằng hộp thư shop theo dõi để cả khách chưa đặt hàng cũng có thể gửi yêu cầu xóa dữ liệu. Build lại và triển khai. Kiểm tra đăng nhập cả hai nhà cung cấp bằng tài khoản thử trên tên miền đã khai báo.

@@ -50,6 +50,7 @@ ${entries.join(',\n')}
 /* ---------- 2. ghép trang ---------- */
 const read = n => fs.readFileSync(path.join(SRC, n), 'utf8');
 const css = [
+  'styles/fonts.css',
   'styles/theme.css',
   'styles/shop.css',
   'styles/editor.css',
@@ -74,6 +75,8 @@ const mod = n => {
 };
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
+fs.cpSync(path.join(SRC, 'assets'), path.join(DIST, 'assets'), { recursive: true });
+fs.copyFileSync(path.join(SRC, 'our-archive.svg'), path.join(DIST, 'our-archive.svg'));
 function page(file, files, title, extraHead, body = '<div id="app"></div>') {
   const js = files.map(n => `/* ---- ${n}.js ---- */\n` + mod(n)).join('\n').replace(/<\/script/gi, '<\\/script');
   const html = `<!doctype html>

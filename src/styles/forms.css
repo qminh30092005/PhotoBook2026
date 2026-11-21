@@ -1,6 +1,6 @@
-/* ---------- phông Nunito cho chữ khách đọc trong form, hộp thoại, trang duyệt (đã duyệt 21/11/2026) ---------- */
+/* Biểu mẫu, hộp thoại và trang duyệt dùng phông giao diện chung. */
 :root {
-  --form: 'Nunito', 'Montserrat', system-ui, sans-serif;
+  --form: var(--ui);
 }
 .dlg,
 .dlg button,

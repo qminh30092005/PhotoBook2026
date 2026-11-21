@@ -61,7 +61,7 @@ function renderEditor() {
   }
   app().innerHTML = `<div class="ed" id="ed">
    <header class="ed-top">
-     <div class="logo" style="font-size:17px;margin-right:6px"><b>our</b> archive</div>
+     <div class="logo" style="font-size:17px;margin-right:6px"><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"></div>
      <button class="tb" id="undo" title="hoàn tác (Ctrl+Z)">${ic('undo')}<span>Hoàn tác</span></button>
      <button class="tb" id="redo" title="làm lại (Ctrl+Y)">${ic('redo')}<span>Làm lại</span></button>
      <button class="tb" id="proj">${ic('proj')}<span>Dự án</span></button>

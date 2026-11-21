@@ -9,7 +9,7 @@ run(`"${process.execPath}" "${path.join(nm, 'tailwindcss', 'lib', 'cli.js')}" -i
 require('esbuild').buildSync({
   entryPoints: [path.join(D, 'src', 'main.jsx')], bundle: true, minify: true, format: 'iife',
   define: { 'process.env.NODE_ENV': '"production"' }, outfile: path.join(D, 'bundle.js'), logLevel: 'warning',
-  loader: { '.jsx': 'jsx' },
+  loader: { '.jsx': 'jsx', '.svg': 'dataurl' },
 });
 /* nhúng font: chỉ subset latin + latin-ext + vietnamese */
 function embed(pkg, weights) {

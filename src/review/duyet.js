@@ -11,7 +11,7 @@ function render() {
   rvRender();
 }
 function rvShell(inner) {
-  app().innerHTML = `<div class="rv"><header class="shop-top wrap"><div class="logo"><b>our</b> archive</div><span class="muted" style="font-size:12px">Bản duyệt cuốn sách</span></header><main class="wrap rv-main">${inner}</main></div>`;
+  app().innerHTML = `<div class="rv"><header class="shop-top wrap"><div class="logo"><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"></div><span class="muted" style="font-size:12px">Bản duyệt cuốn sách</span></header><main class="wrap rv-main">${inner}</main></div>`;
 }
 async function rvLoad() {
   if (!CONFIG.API_URL || !RV.code || !RV.key) {

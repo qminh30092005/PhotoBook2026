@@ -41,7 +41,7 @@ const FONTS=[
  {id:'sriracha',name:'Sriracha',css:"'Sriracha',cursive",w:400,label:'Cọ vẽ'},
  {id:'mali',name:'Mali',css:"'Mali',cursive",w:700,label:'Tròn dễ thương'}];
 const fontOf=id=>FONTS.find(f=>f.id===id)||FONTS[0];
-const GF="https://fonts.googleapis.com/css2?family=Paytone+One&family=Anton&family=Oswald:wght@700&family=Montserrat:wght@400;500;600;700;800;900&family=Mulish:wght@700;800;900&family=Nunito:wght@600;700;800;900&family=Be+Vietnam+Pro:wght@500;800&family=Playfair+Display:ital,wght@0,800;1,600&family=Lora:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@1,600&family=Dancing+Script:wght@700&family=Charm:wght@700&family=Pangolin&family=Patrick+Hand&family=Sriracha&family=Mali:wght@700&display=swap";
+const GF="https://fonts.googleapis.com/css2?family=Paytone+One&family=Anton&family=Oswald:wght@700&family=Mulish:wght@700;800;900&family=Nunito:wght@600;700;800;900&family=Be+Vietnam+Pro:wght@500;800&family=Playfair+Display:ital,wght@0,800;1,600&family=Lora:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@1,600&family=Dancing+Script:wght@700&family=Charm:wght@700&family=Pangolin&family=Patrick+Hand&family=Sriracha&family=Mali:wght@700&display=swap";
 
 /* cover templates: bg, title colour, subtitle colour, mode center|bleed */
 const TPL=[
