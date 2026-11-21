@@ -54,7 +54,8 @@ function pickFiles(cb){const i=document.createElement('input');i.type='file';i.a
 
 /* ===== SHOP ===== */
 function miniBook(tp,pw){return tp.custom?`<div class="custom-tile" style="width:${pw}px;height:${pw*RATIO}px">+</div>`:`<div class="mini">${frontOnlyHTML(tp,pw)}</div>`}
-function renderShop(){if(!renderShop._t){renderShop._t=1;track('view_product',{})}
+function heroBookW(){const h=innerWidth>1000?innerHeight-112:(innerHeight<=760?Math.max(150,innerHeight*.24):Math.max(200,innerHeight*.28));return Math.max(80,Math.min(300,Math.round(innerWidth*.55),Math.round(h*.72/RATIO)))}
+function renderShop(){if(!renderShop._t){renderShop._t=1;track('view_product',{});let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(S.screen==='shop'&&!document.activeElement?.matches?.('#q')){const y=scrollY;renderShop();scrollTo(0,y)}},150)})}
   const t=tierOf(S.tier), tp=tplOf(S.tpl), q=(S.q||'');
   const list=[...TPL,CUSTOM].filter(x=>!q||strip(x.name+' '+(x.title||'')+' '+(ART[x.art]?ART[x.art].name:'')).includes(strip(q)));
   app().innerHTML=`
@@ -62,10 +63,11 @@ function renderShop(){if(!renderShop._t){renderShop._t=1;track('view_product',{}
   <main class="shop wrap">
     <section class="hero-book" aria-label="Xem trước bìa">
       <button class="hero-nav l" id="hPrev" aria-label="Mẫu trước">${ic('left')}</button>
-      <div class="book3d">${book3D(tp,Math.min(300,Math.round(innerWidth*.55)))}</div>
+      <div class="book3d">${book3D(tp,heroBookW())}</div>
       <button class="hero-nav r" id="hNext" aria-label="Mẫu sau">${ic('right')}</button>
     </section>
     <section class="shop-info">
+      <div class="shop-fold">
       <h1>Photobook cặp đôi</h1>
       <div class="price-line"><span class="muted" style="font-weight:600">${t.pages} trang · </span><span class="big">${vnd(t.price)}</span> <span class="badge">Cọc 50%: ${vnd(dep(t.price))}</span></div>
       <div class="tpl-box"><label class="search">${ic('search')}<input id="q" placeholder="Tìm mẫu bìa cho kỷ niệm của hai bạn" value="${esc(q)}"></label>
@@ -74,6 +76,7 @@ function renderShop(){if(!renderShop._t){renderShop._t=1;track('view_product',{}
       <div class="tiers">${TIERS.map(x=>`<button class="tier${x.id===S.tier?' on':''}" data-tier="${x.id}">
         ${x.tag?`<span class="tag">${x.tag}</span>`:''}<b>${x.pages} trang</b><span class="tp">${vnd(x.price)}</span><small>Tối đa ${x.max} ảnh · ${x.motifs} hình vẽ</small></button>`).join('')}</div>
       <button class="pill block" id="start">Bắt đầu thiết kế</button>
+      </div>
       <p class="muted" style="margin:0;font-size:12px">Chọn một mẫu bìa, bấm “Bắt đầu thiết kế”, mẫu sẽ hiện sẵn trong trình thiết kế để hai bạn sửa chữ, đổi hình.</p>
       <span class="note-chip">Ship 20k nội thành Hà Nội · 30k tỉnh khác · chuyển khoản đủ 100% được miễn ship · tặng ${t.gift}</span><span class="note-chip">Từ cuốn thứ 2 cùng thiết kế giảm ${Math.round(CONFIG.SECOND_COPY_DISCOUNT*100)}% · giao ${CONFIG.DELIVERY_DAYS} sau khi hai bạn duyệt bản thiết kế</span>
       <div class="specs"><span>Khổ</span><b>B5 nhỡ 16,5 × 23,5 cm</b><span>Bìa</span><b>Bìa cứng matte, gáy vuông</b><span>Ruột</span><b>Giấy mỹ thuật 200gsm</b><span>Số trang</span><b>${t.pages} trang · tối đa ${t.max} ảnh</b><span>Hình vẽ</span><b>${t.motifs} mẫu · tối đa ${t.stickers} hình trên cả quyển</b></div>
