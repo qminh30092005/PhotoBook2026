@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.mock-data/
+.env
+.env.*
+!.env.example
+.vercel/
+
+# dashboard (bản build tự sinh)
+dashboard/dashboard.html
+dashboard/bundle.js
+dashboard/build.css
+
+.DS_Store
+Thumbs.db

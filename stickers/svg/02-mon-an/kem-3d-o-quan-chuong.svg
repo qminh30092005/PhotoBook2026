@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -10 184 172" width="368" height="344">
+<title>Kem que 3D · Ô Quan Chưởng</title>
+<ellipse cx="84" cy="147" rx="34" ry="4.2" fill="#E9E1D3"/>
+<rect x="74" y="110" width="12" height="36" rx="5" fill="#E6C79A"/>
+<rect x="81" y="110" width="5" height="36" rx="2.5" fill="#C9A26E"/>
+<rect x="74" y="110" width="12" height="5" fill="#7E4E39" opacity=".45"/>
+<!-- thân cổng (tường thành dày) -->
+<rect x="36" y="64" width="88" height="48" rx="6" fill="#A0674B"/>
+<path d="M104 64 H118 a6 6 0 0 1 6 6 V106 a6 6 0 0 1 -6 6 H104 Z" fill="#7E4E39"/>
+<rect x="40" y="67" width="2" height="40" rx="1" fill="#C08A68"/>
+<!-- gạch -->
+<rect x="44" y="72" width="14" height="2" rx="1" fill="#7E4E39"/><rect x="44" y="84" width="10" height="2" rx="1" fill="#7E4E39"/><rect x="46" y="96" width="12" height="2" rx="1" fill="#7E4E39"/>
+<rect x="102" y="76" width="12" height="2" rx="1" fill="#5E3A2A"/><rect x="106" y="90" width="10" height="2" rx="1" fill="#5E3A2A"/>
+<!-- vòm cổng -->
+<path d="M66 112 V88 a14 14 0 0 1 28 0 V112 Z" fill="#C08A68"/>
+<path d="M69 112 V89 a11 11 0 0 1 22 0 V112 Z" fill="#4B2E24"/>
+<rect x="79" y="76" width="2.5" height="3" fill="#C08A68"/>
+<!-- biển đề -->
+<rect x="70" y="67" width="20" height="7" rx="1.5" fill="#F3C35F"/>
+<rect x="85" y="67" width="5" height="7" rx="1.5" fill="#DDA543"/>
+<!-- tường lan can trên -->
+<rect x="34" y="58" width="92" height="7" rx="2" fill="#C08A68"/>
+<rect x="34" y="58" width="92" height="2" rx="1" fill="#D9AE8F"/>
+<rect x="34" y="64" width="92" height="1.8" fill="#5E3A2A"/>
+<path d="M40 65 h5 v5 a2.5 2.5 0 0 1 -5 0 Z" fill="#A0674B"/>
+<path d="M112 65 h4 v4 a2 2 0 0 1 -4 0 Z" fill="#7E4E39"/>
+<!-- lầu canh -->
+<rect x="58" y="38" width="44" height="21" fill="#A0674B"/>
+<rect x="90" y="38" width="12" height="21" fill="#7E4E39"/>
+<rect x="64" y="44" width="7" height="10" rx="1" fill="#4B2E24"/><rect x="76.5" y="44" width="7" height="10" rx="1" fill="#4B2E24"/><rect x="89" y="44" width="7" height="10" rx="1" fill="#3A2219"/>
+<!-- mái lầu 2 tầng -->
+<path d="M48 40 Q55 38 59 32 H101 Q105 38 112 40 Q109 43 103 42 H57 Q51 43 48 40 Z" fill="#7E4E39"/>
+<path d="M80 32 H101 Q105 38 112 40 Q109 43 103 42 H80 Z" fill="#5E3A2A"/>
+<path d="M48 40 Q55 38 59 32 H80 V34 H61 Q57 39 50 41 Z" fill="#C08A68"/>
+<rect x="64" y="25" width="32" height="8" fill="#A0674B"/><rect x="88" y="25" width="8" height="8" fill="#7E4E39"/>
+<path d="M56 26 Q63 24 66 18 L74 13 H86 L94 18 Q97 24 104 26 Q101 29 96 28 H64 Q59 29 56 26 Z" fill="#7E4E39"/>
+<path d="M80 13 H86 L94 18 Q97 24 104 26 Q101 29 96 28 H80 Z" fill="#5E3A2A"/>
+<path d="M56 26 Q63 24 66 18 L74 13 H80 V15 H75 L68 19 Q65 25 58 27 Z" fill="#C08A68"/>
+<circle cx="80" cy="10.5" r="2.6" fill="#A0674B"/>
+</svg>

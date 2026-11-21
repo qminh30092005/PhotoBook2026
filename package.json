@@ -1,0 +1,15 @@
+{
+  "name": "our-archive",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Our Archive · photobook cặp đôi: trang khách, trang admin, trang duyệt",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/build.js && node scripts/dev.js",
+    "mock-api": "node scripts/mock-api.js",
+    "test:api": "node scripts/test-api.js"
+  }
+}

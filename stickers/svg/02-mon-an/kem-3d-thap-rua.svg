@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -10 184 172" width="368" height="344">
+<title>Kem que 3D · Tháp Rùa</title>
+<!-- bóng đổ phẳng -->
+<ellipse cx="84" cy="147" rx="30" ry="4.2" fill="#E9E1D3"/>
+<!-- que gỗ -->
+<rect x="74" y="110" width="12" height="36" rx="5" fill="#E6C79A"/>
+<rect x="81" y="110" width="5" height="36" rx="2.5" fill="#C9A26E"/>
+<rect x="74" y="110" width="12" height="5" fill="#B9822E" opacity=".45"/>
+<!-- gò đất / đế kem -->
+<rect x="46" y="98" width="68" height="16" rx="8" fill="#F4A3B5"/>
+<path d="M96 98 H106 a8 8 0 0 1 8 8 v0 a8 8 0 0 1 -8 8 H96 Z" fill="#E8798A"/>
+<rect x="52" y="99" width="30" height="2.2" rx="1.1" fill="#F9C9D4"/>
+<!-- tầng 1 -->
+<rect x="54" y="70" width="52" height="30" fill="#F4A3B5"/>
+<rect x="92" y="70" width="14" height="30" fill="#E8798A"/>
+<rect x="55" y="72" width="2.2" height="26" fill="#F9C9D4"/>
+<path d="M73 100 V88 a7 7 0 0 1 14 0 V100 Z" fill="#B23A5B"/>
+<path d="M59 98 V90 a3.5 3.5 0 0 1 7 0 V98 Z" fill="#D9526B"/>
+<path d="M94 98 V90 a3.5 3.5 0 0 1 7 0 V98 Z" fill="#B23A5B"/>
+<!-- gờ tầng 1 -->
+<rect x="50" y="65" width="60" height="6" rx="2" fill="#F4A3B5"/>
+<rect x="50" y="65" width="60" height="1.8" rx=".9" fill="#F9C9D4"/>
+<rect x="50" y="70" width="60" height="1.8" fill="#D9526B"/>
+<rect x="96" y="65" width="14" height="6" rx="2" fill="#E8798A"/>
+<!-- giọt kem chảy -->
+<path d="M58 71 h5 v4 a2.5 2.5 0 0 1 -5 0 Z" fill="#F4A3B5"/>
+<path d="M99 71 h4 v6 a2 2 0 0 1 -4 0 Z" fill="#E8798A"/>
+<!-- tầng 2 -->
+<rect x="60" y="46" width="40" height="20" fill="#F4A3B5"/>
+<rect x="89" y="46" width="11" height="20" fill="#E8798A"/>
+<rect x="61" y="48" width="2" height="16" fill="#F9C9D4"/>
+<path d="M75 66 V56 a5 5 0 0 1 10 0 V66 Z" fill="#B23A5B"/>
+<rect x="56" y="42" width="48" height="5" rx="2" fill="#F4A3B5"/>
+<rect x="56" y="42" width="48" height="1.6" rx=".8" fill="#F9C9D4"/>
+<rect x="56" y="46" width="48" height="1.6" fill="#D9526B"/>
+<rect x="93" y="42" width="11" height="5" rx="2" fill="#E8798A"/>
+<!-- tầng 3 -->
+<rect x="66" y="30" width="28" height="13" fill="#F4A3B5"/>
+<rect x="86" y="30" width="8" height="13" fill="#E8798A"/>
+<circle cx="80" cy="36.5" r="3.6" fill="#B23A5B"/>
+<!-- mái cong -->
+<path d="M58 31 Q64 30 68 26 L80 15 L92 26 Q96 30 102 31 Q99 33 94 32 H66 Q61 33 58 31 Z" fill="#E8798A"/>
+<path d="M80 15 L92 26 Q96 30 102 31 Q99 33 94 32 H80 Z" fill="#D9526B"/>
+<path d="M58 31 Q64 30 68 26 L80 15 L81.5 16.4 L70 27 Q65 31 58 31 Z" fill="#F9C9D4"/>
+<circle cx="80" cy="12.5" r="3" fill="#F4A3B5"/>
+<circle cx="81" cy="13.2" r="1.8" fill="#E8798A"/>
+<!-- nét sáng mép trái của khối kem -->
+<rect x="47.5" y="102" width="2" height="8" rx="1" fill="#FFFDF8" opacity=".8"/>
+</svg>

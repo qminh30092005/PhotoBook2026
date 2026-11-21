@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nhận diện Our Archive (khớp web): Montserrat cho chữ giao diện, Mulish cho tiêu đề */
+body { font-family: 'Montserrat', system-ui, sans-serif; }
+h1, h2, h3, .font-head { font-family: 'Mulish', 'Montserrat', system-ui, sans-serif; letter-spacing: -0.01em; }
+input[type="range"] { accent-color: #2E2E2E; }

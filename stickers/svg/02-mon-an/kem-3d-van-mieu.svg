@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -10 184 172" width="368" height="344">
+<title>Kem que 3D · Khuê Văn Các</title>
+<ellipse cx="84" cy="147" rx="32" ry="4.2" fill="#E9E1D3"/>
+<rect x="74" y="110" width="12" height="36" rx="5" fill="#E6C79A"/>
+<rect x="81" y="110" width="5" height="36" rx="2.5" fill="#C9A26E"/>
+<rect x="74" y="110" width="12" height="5" fill="#B9822E" opacity=".45"/>
+<!-- đế -->
+<rect x="42" y="100" width="76" height="14" rx="7" fill="#8CB46A"/>
+<path d="M100 100 H111 a7 7 0 0 1 0 14 H100 Z" fill="#6E9A52"/>
+<rect x="48" y="101" width="34" height="2" rx="1" fill="#C5DCA5"/>
+<!-- 4 trụ gạch -->
+<rect x="48" y="74" width="12" height="27" fill="#8CB46A"/><rect x="56" y="74" width="4" height="27" fill="#6E9A52"/>
+<rect x="66" y="74" width="10" height="27" fill="#8CB46A"/><rect x="73" y="74" width="3" height="27" fill="#6E9A52"/>
+<rect x="84" y="74" width="10" height="27" fill="#8CB46A"/><rect x="91" y="74" width="3" height="27" fill="#6E9A52"/>
+<rect x="100" y="74" width="12" height="27" fill="#6E9A52"/><rect x="108" y="74" width="4" height="27" fill="#4F7A3E"/>
+<rect x="49" y="76" width="1.8" height="22" fill="#C5DCA5"/>
+<!-- gờ dưới gác -->
+<rect x="44" y="69" width="72" height="6" rx="2" fill="#8CB46A"/>
+<rect x="44" y="69" width="72" height="1.8" rx=".9" fill="#C5DCA5"/>
+<rect x="44" y="74" width="72" height="1.8" fill="#4F7A3E"/>
+<rect x="102" y="69" width="14" height="6" rx="2" fill="#6E9A52"/>
+<path d="M50 75 h5 v4 a2.5 2.5 0 0 1 -5 0 Z" fill="#8CB46A"/>
+<!-- mái dưới -->
+<path d="M38 66 Q46 64 50 58 H110 Q114 64 122 66 Q118 70 112 69 H48 Q42 70 38 66 Z" fill="#6E9A52"/>
+<path d="M80 58 H110 Q114 64 122 66 Q118 70 112 69 H80 Z" fill="#4F7A3E"/>
+<path d="M38 66 Q46 64 50 58 H80 V60 H52 Q48 65 40 67 Z" fill="#C5DCA5"/>
+<!-- gác vuông với cửa sổ tròn -->
+<rect x="58" y="36" width="44" height="23" fill="#8CB46A"/>
+<rect x="90" y="36" width="12" height="23" fill="#6E9A52"/>
+<rect x="59" y="38" width="1.8" height="19" fill="#C5DCA5"/>
+<circle cx="80" cy="47.5" r="8.5" fill="#4F7A3E"/>
+<circle cx="80" cy="47.5" r="6.5" fill="#C5DCA5"/>
+<g fill="#4F7A3E"><rect x="79.2" y="41" width="1.6" height="13"/><rect x="79.2" y="41" width="1.6" height="13" transform="rotate(45 80 47.5)"/><rect x="79.2" y="41" width="1.6" height="13" transform="rotate(90 80 47.5)"/><rect x="79.2" y="41" width="1.6" height="13" transform="rotate(135 80 47.5)"/></g>
+<circle cx="80" cy="47.5" r="1.8" fill="#4F7A3E"/>
+<!-- mái trên -->
+<path d="M46 37 Q54 35 58 28 L68 20 H92 L102 28 Q106 35 114 37 Q110 40 104 39 H56 Q50 40 46 37 Z" fill="#6E9A52"/>
+<path d="M80 20 H92 L102 28 Q106 35 114 37 Q110 40 104 39 H80 Z" fill="#4F7A3E"/>
+<path d="M46 37 Q54 35 58 28 L68 20 H80 V22 H69 L60 29 Q56 36 48 38 Z" fill="#C5DCA5"/>
+<rect x="66" y="17" width="28" height="4" rx="2" fill="#8CB46A"/>
+<rect x="66" y="17" width="28" height="1.4" rx=".7" fill="#C5DCA5"/>
+<circle cx="80" cy="14" r="2.8" fill="#8CB46A"/><circle cx="81" cy="14.6" r="1.6" fill="#6E9A52"/>
+<!-- giọt kem -->
+<path d="M106 69 h4 v5 a2 2 0 0 1 -4 0 Z" fill="#4F7A3E"/>
+</svg>
