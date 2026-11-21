@@ -50,7 +50,7 @@ Cập nhật: 21/11/2026. Bản này thay cho `our-archive-tai-lieu.md` cũ (ng�
 ## 2. Chức năng đã làm
 
 ### Giai đoạn 1 · nhận đơn thật
-- **Khối CONFIG** ở `src/config.js` gom chính sách giá; thông tin shop điền bằng biến môi trường trên Vercel (xem `.env.example`). Ô nào để trống thì tính năng đó tự tắt.
+- **Khối CONFIG** ở `src/shared/config.js` gom chính sách giá; thông tin shop điền bằng biến môi trường trên Vercel (xem `.env.example`). Ô nào để trống thì tính năng đó tự tắt.
 - **Form đặt sách:**
   - Các trường: tên, số điện thoại/Zalo, email (bắt buộc), địa chỉ, khu vực, số cuốn, mã giới thiệu, cách thanh toán, ô tick quyền đăng ảnh, lời nhắn.
   - Bảng tiền tính trực tiếp khi khách đổi lựa chọn.
@@ -125,7 +125,7 @@ Xem `README.md` ở thư mục gốc: `src/` (web), `stickers/` (SVG), `apps-scr
 1. Chạy `npm run mock-api`.
 2. Ở cửa sổ khác, chạy `npm run test:api`.
 ## 6. Còn chờ bạn
-- Thông số nhà in: khổ, độ dày gáy thật, màu RGB hay CMYK, giấy. Sau đó cập nhật `PRINT` trong `src/pdf.js`.
-- Báo giá thật của 3 xưởng. Sau đó nhập vào `PRESETS` trong `dashboard/src/App.jsx`, rồi chạy `npm run build` trong `dashboard/`.
+- Thông số nhà in: khổ, độ dày gáy thật, màu RGB hay CMYK, giấy. Sau đó cập nhật `PRINT` trong `src/admin/pdf.js`.
+- Báo giá thật của 3 xưởng. Sau đó nhập vào `PRESETS` trong `dashboard/src/finance/model.js`, rồi chạy `npm run build` trong `dashboard/`.
 - Chốt món upsell với cofounder, sau đó báo Claude để bật lên web.
 - Tài khoản ngân hàng, Zalo, Instagram, ID Pixel/GA4: điền ở bước 4 và bước 6 của hướng dẫn cài đặt.

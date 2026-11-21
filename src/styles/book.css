@@ -1,0 +1,238 @@
+/* ---------- book ---------- */
+.spread {
+  position: relative;
+  display: flex;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.35);
+}
+.spread.cover {
+  gap: 0;
+}
+.page {
+  position: relative;
+  overflow: hidden;
+  background: #fffefb;
+  flex: none;
+  --u: 1px;
+}
+.page.dark {
+  background: var(--endpaper);
+  color: #cfcfcf;
+}
+.spine {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow:
+    inset 3px 0 4px rgba(0, 0, 0, 0.12),
+    inset -3px 0 4px rgba(0, 0, 0, 0.12);
+}
+.spine span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+}
+.gutter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 9%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 40;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.42) 49%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.42) 51%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.endnote {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--ui);
+  padding: 0 12%;
+}
+.endnote b {
+  font-weight: 600;
+  font-size: calc(var(--u) * 11);
+}
+.endnote small {
+  font-size: calc(var(--u) * 7.5);
+  opacity: 0.7;
+}
+.frame {
+  position: absolute;
+  overflow: hidden;
+  background: #edebe6;
+}
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+.frame .drag-here {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #8c8a85;
+  font-size: calc(var(--u) * 8);
+  font-family: var(--ui);
+  background: #e4e2dd;
+}
+.frame.over {
+  outline: 3px solid var(--ok);
+  outline-offset: -3px;
+}
+.frame.sel {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.el {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  touch-action: none;
+}
+.el.art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.el.txt .t {
+  white-space: pre-wrap;
+  word-break: break-word;
+  outline: none;
+  line-height: 1.05;
+  min-height: 1em;
+}
+.el.txt .t[contenteditable='true'] {
+  cursor: text;
+  user-select: text;
+}
+.editable .el {
+  cursor: move;
+}
+.editable .el:hover {
+  outline: 1px dashed var(--accent);
+}
+.el.sel {
+  outline: 1.5px solid var(--accent) !important;
+}
+.h-rs {
+  position: absolute;
+  right: -9px;
+  bottom: -9px;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  background: #fff;
+  border: 1.5px solid var(--accent);
+  cursor: nwse-resize;
+  touch-action: none;
+}
+.h-rs.tl {
+  left: -9px;
+  top: -9px;
+  right: auto;
+  bottom: auto;
+}
+.guide-v,
+.guide-h {
+  position: absolute;
+  z-index: 45;
+  pointer-events: none;
+  border: 0 dashed var(--accent);
+  opacity: 0;
+}
+.guide-v {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left-width: 1.5px;
+}
+.guide-h {
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top-width: 1.5px;
+}
+.guide-v.on,
+.guide-h.on {
+  opacity: 1;
+}
+.ftb {
+  position: absolute;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  padding: 4px;
+  white-space: nowrap;
+}
+.ftb button {
+  border: 0;
+  background: none;
+  height: 30px;
+  min-width: 30px;
+  padding: 0 7px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.ftb button:hover {
+  background: var(--bg-soft);
+}
+.ftb select {
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 12px;
+  max-width: 150px;
+}
+.ftb .sep {
+  width: 1px;
+  height: 20px;
+  background: var(--line);
+  margin: 0 3px;
+}
+.ftb .cdot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  min-width: 18px;
+  padding: 0;
+}
+.ftb .val {
+  font-size: 11px;
+  min-width: 30px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}

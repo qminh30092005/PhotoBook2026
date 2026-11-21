@@ -1,0 +1,44 @@
+.account-nav,
+.shop-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.account-nav a {
+  white-space: nowrap;
+  border-radius: 99px;
+  padding: 11px 15px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+}
+.account-nav a:first-child:not(:last-child) {
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.account-nav a:last-child {
+  background: var(--ink);
+  color: white;
+}
+.shop-links {
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 16px;
+  font-size: 13px;
+  column-gap: 20px;
+}
+@media (max-width: 580px) {
+  .shop-top:has(.account-nav) {
+    height: auto;
+    min-height: 52px;
+    flex-wrap: wrap;
+    padding-block: 6px;
+  }
+  .shop-top:has(.account-nav) .top-sub {
+    display: none;
+  }
+  .account-nav a {
+    padding: 9px 12px;
+  }
+}

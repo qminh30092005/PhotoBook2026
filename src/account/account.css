@@ -1,0 +1,198 @@
+body:has(.account-card),
+body:has(.policy-page) {
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+.account-card,
+.policy-page {
+  background: white;
+  max-width: 556px;
+  margin: clamp(0px, 5vh, 60px) auto;
+  padding: clamp(22px, 5vw, 40px);
+  border-radius: 20px;
+  line-height: 1.55;
+  color-scheme: light;
+}
+.account-card h1,
+.policy-page h1 {
+  font: 800 clamp(30px, 6vw, 40px)/1.12 var(--ui);
+  letter-spacing: -0.045em;
+}
+.account-card a,
+.policy-page a {
+  color: inherit;
+  font-weight: 650;
+  text-underline-offset: 3px;
+}
+.back-shop {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+.account-card .intro {
+  font-size: 15px;
+  margin: 10px 0 22px;
+  color: var(--ink-2);
+}
+.social {
+  display: flex;
+  gap: 12px;
+}
+.social button,
+.account-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  border-radius: 99px;
+  font-weight: 750;
+  font-size: 15px;
+}
+.social button {
+  flex: 1;
+  border: 1px solid var(--line-strong);
+  background: white;
+  color: var(--ink);
+}
+.social b {
+  font: 900 24px Arial;
+}
+.google,
+.facebook {
+  color: var(--ink);
+}
+.or {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink-2);
+  margin: 20px 0;
+  font-size: 12px;
+}
+.or:before,
+.or:after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--line-strong);
+}
+.fields {
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+}
+.account-field {
+  position: relative;
+  padding: 12px 15px;
+}
+.account-field + .account-field {
+  border-top: 1px solid var(--line-strong);
+}
+.account-field label {
+  display: block;
+  color: var(--ink-2);
+  font-weight: 650;
+  font-size: 12px;
+}
+.account-field input {
+  width: 100%;
+  background: white;
+  border: 0;
+  padding: 4px 36px 3px 0;
+  font-size: 16px;
+}
+.eye {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+}
+.fine,
+.consent,
+.switch-account,
+.account-card small {
+  color: var(--ink-2);
+  font-size: 13px;
+}
+.fine,
+.consent {
+  margin: 20px 0;
+}
+.consent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.consent input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+  flex: none;
+}
+.text-action {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.reset {
+  margin: 8px 0 0 auto;
+}
+.account-primary,
+.account-card a.account-primary {
+  width: 100%;
+  background: var(--ink);
+  color: white;
+  border: 0;
+  text-decoration: none;
+}
+.account-primary:disabled {
+  background: #e2e5ea;
+  color: var(--ink-2);
+  cursor: default;
+}
+.switch-account {
+  text-align: center;
+  margin: 30px 0 0;
+}
+.switch-account a {
+  margin-left: 5px;
+}
+.account-card [role='status']:not(:empty) {
+  padding: 10px;
+  background: var(--bg-soft);
+  border-radius: 8px;
+}
+.policy-page {
+  max-width: 700px;
+  font-size: 15px;
+}
+.policy-page h2 {
+  font-size: 20px;
+  margin-top: 26px;
+}
+@media (max-width: 580px) {
+  .account-card,
+  .policy-page {
+    margin: 0 auto;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+}
+
+.account-card .switch-account a,
+.policy-page > a:last-child {
+  color: var(--accent);
+}
+.account-field:focus-within {
+  box-shadow: inset 3px 0 var(--accent);
+}
+.social button:hover {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}

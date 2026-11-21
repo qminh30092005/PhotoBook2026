@@ -1,0 +1,212 @@
+/* ---------- phông Nunito cho chữ khách đọc trong form, hộp thoại, trang duyệt (đã duyệt 21/11/2026) ---------- */
+:root {
+  --form: 'Nunito', 'Montserrat', system-ui, sans-serif;
+}
+.dlg,
+.dlg button,
+.dlg input,
+.dlg textarea,
+.dlg select,
+.rv,
+.rv button,
+.rv textarea,
+.adm-center,
+.adm-center input,
+.adm-center button,
+.toast {
+  font-family: var(--form);
+}
+.dlg {
+  font-size: 15px;
+}
+.dlg h2 {
+  font-family: var(--form);
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+.dlg .muted,
+.dlg p {
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.fld > span {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ink-2);
+}
+.fld > span i {
+  font-weight: 600;
+}
+.fld input,
+.fld textarea,
+.koc input {
+  height: 48px;
+  border-radius: 14px;
+  border-width: 1.5px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--bg);
+  padding: 0 14px;
+}
+.fld textarea {
+  padding: 12px 14px;
+  font-weight: 600;
+}
+.fld input::placeholder,
+.fld textarea::placeholder,
+.koc input::placeholder {
+  color: var(--ink-3);
+  font-weight: 600;
+}
+.fld small {
+  font-size: 12.5px;
+}
+.seg button {
+  height: 46px;
+  font-size: 14.5px;
+  font-weight: 800;
+  border-width: 1.5px;
+}
+.stepper {
+  height: 48px;
+}
+.stepper button {
+  height: 46px;
+  width: 46px;
+  font-size: 20px;
+}
+.stepper b {
+  font-size: 17px;
+  font-weight: 900;
+}
+.koc .ghost {
+  height: 48px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.paycards button {
+  border-radius: 16px;
+  border-width: 1.5px;
+  padding: 14px 16px;
+}
+.paycards b {
+  font-family: var(--form);
+  font-size: 17px;
+  font-weight: 900;
+}
+.paycards small {
+  font-size: 13px;
+  font-weight: 600;
+}
+.check {
+  font-size: 14px;
+  font-weight: 600;
+}
+.check input {
+  width: 20px;
+  height: 20px;
+}
+.policy {
+  font-size: 13.5px;
+  font-weight: 600;
+  gap: 8px;
+}
+.order-book b {
+  font-family: var(--form);
+  font-size: 16px;
+  font-weight: 900;
+}
+.order-book span {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.dlg .sum {
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 16px;
+}
+.dlg .sum b {
+  font-weight: 900;
+}
+.sum .paynow {
+  font-weight: 900;
+}
+.dlg .pill {
+  font-family: var(--form);
+  font-weight: 900;
+  font-size: 16px;
+  height: 52px;
+}
+.dlg .ghost {
+  font-weight: 800;
+  font-size: 14px;
+  height: 42px;
+}
+.dlg .ghost.sm {
+  font-size: 12.5px;
+  height: 32px;
+}
+.err {
+  font-size: 14px;
+  font-weight: 700;
+}
+.note-box {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.qr-empty {
+  font-size: 14px;
+  font-weight: 600;
+}
+.up-bar {
+  height: 10px;
+  border-radius: 99px;
+  background: var(--bg-sunk);
+  overflow: hidden;
+}
+.up-bar i {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  border-radius: 99px;
+  transition: width 0.3s;
+}
+.rv-head h1 {
+  font-family: var(--form);
+  font-weight: 900;
+  font-size: 28px;
+}
+.rv-head p {
+  font-size: 15.5px;
+  font-weight: 600;
+}
+.rv-act h2 {
+  font-family: var(--form);
+  font-weight: 900;
+}
+.rv-act textarea {
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border-width: 1.5px;
+}
+.rv .pill {
+  font-weight: 900;
+  font-size: 15px;
+}
+.rv .ghost {
+  font-weight: 800;
+  font-size: 14px;
+}
+.toast {
+  font-weight: 800;
+  font-size: 14px;
+}
+.rv-spreads .spread {
+  isolation: isolate;
+  overflow: hidden;
+}
+.rv-act {
+  z-index: 20;
+}

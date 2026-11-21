@@ -1,7 +1,7 @@
 /* Our Archive · build web → dist/
    Chạy:  npm run build      (Vercel tự chạy lệnh này khi deploy)
    1. Đọc stickers/manifest.json + SVG → sinh mã stickers (nhúng inline, không ghi vào src/).
-   2. Ghép src/styles.css + các file JS → dist/index.html, dist/admin.html, dist/duyet.html.
+   2. Ghép src/styles/ + các file JS → dist/index.html, dist/admin.html, dist/duyet.html.
    3. Ghi đè CONFIG bằng biến môi trường (Vercel → Settings → Environment Variables, hoặc file .env khi chạy trên máy).
    Không cần cài package nào: chỉ dùng Node.js có sẵn. */
 const fs = require('fs'), path = require('path');
@@ -18,7 +18,7 @@ if (fs.existsSync(envFile)) {
     if (m && process.env[m[1]] === undefined) process.env[m[1]] = m[2].replace(/^(['"])(.*)\1$/, '$2');
   }
 }
-const ENV_KEYS = ['API_URL', 'SITE_URL', 'BANK_ID', 'ACCOUNT_NO', 'ACCOUNT_NAME', 'SHOP_ZALO', 'SHOP_INSTAGRAM', 'META_PIXEL_ID', 'GA4_ID'];
+const ENV_KEYS = ['API_URL', 'SITE_URL', 'BANK_ID', 'ACCOUNT_NO', 'ACCOUNT_NAME', 'SHOP_ZALO', 'SHOP_INSTAGRAM', 'META_PIXEL_ID', 'GA4_ID', 'FIREBASE_API_KEY', 'FIREBASE_AUTH_DOMAIN', 'FIREBASE_PROJECT_ID', 'FIREBASE_APP_ID', 'SHOP_PRIVACY_EMAIL'];
 const overrides = {};
 for (const k of ENV_KEYS) if (process.env[k]) overrides[k] = process.env[k].trim();
 if (!overrides.SITE_URL && process.env.VERCEL_PROJECT_PRODUCTION_URL) overrides.SITE_URL = 'https://' + process.env.VERCEL_PROJECT_PRODUCTION_URL;
@@ -49,17 +49,32 @@ ${entries.join(',\n')}
 
 /* ---------- 2. ghép trang ---------- */
 const read = n => fs.readFileSync(path.join(SRC, n), 'utf8');
-const css = read('styles.css');
-const GF = (read('data.js').match(/const GF="([^"]+)"/) || [])[1];
+const css = [
+  'styles/theme.css',
+  'styles/shop.css',
+  'styles/editor.css',
+  'styles/book.css',
+  'styles/overlays.css',
+  'styles/responsive.css',
+  'styles/flipbook.css',
+  'styles/checkout.css',
+  'styles/editor-tools.css',
+  'styles/admin-review.css',
+  'styles/forms.css',
+  'styles/materials.css',
+  'styles/story.css',
+  'styles/navigation.css',
+].map(read).join('');
+const GF = (read('book/data.js').match(/const GF="([^"]+)"/) || [])[1];
 const mod = n => {
   if (n === 'stickers') return stickersJs;
   let js = read(n + '.js');
-  if (n === 'config' && Object.keys(overrides).length) js += `\nObject.assign(CONFIG,${JSON.stringify(overrides)});`;
+  if (n === 'shared/config' && Object.keys(overrides).length) js += `\nObject.assign(CONFIG,${JSON.stringify(overrides)});`;
   return js;
 };
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
-function page(file, files, title, extraHead) {
+function page(file, files, title, extraHead, body = '<div id="app"></div>') {
   const js = files.map(n => `/* ---- ${n}.js ---- */\n` + mod(n)).join('\n').replace(/<\/script/gi, '<\\/script');
   const html = `<!doctype html>
 <html lang="vi">
@@ -75,7 +90,7 @@ ${css}
 </style>
 </head>
 <body>
-<div id="app"></div>
+${body}
 <script>
 ${js}
 </script>
@@ -85,11 +100,45 @@ ${js}
   fs.writeFileSync(path.join(DIST, file), html);
   console.log('ok ·', 'dist/' + file, Math.round(html.length / 1024), 'KB');
 }
-const core = ['config', 'data', 'art', 'stickers', 'book', 'quality', 'api', 'app', 'editor', 'order'];
+const core = [
+  'shared/config',
+  'book/data',
+  'book/art',
+  'stickers',
+  'book/book',
+  'book/quality',
+  'shared/api',
+  'shared/draft-storage',
+  'shared/ui',
+  'shop/photos',
+  'shop/storefront',
+  'shop/upload',
+  'book/generate',
+  'editor/workspace',
+  'editor/panel',
+  'editor/toolbar',
+  'editor/elements',
+  'editor/events',
+  'editor/gestures',
+  'editor/menu',
+  'shared/dialog',
+  'editor/print-summary',
+  'editor/preview',
+  'shop/router',
+  'checkout/order',
+];
 const noindex = '<meta name="robots" content="noindex,nofollow">';
-page('index.html', [...core, 'boot'], 'Our Archive · photobook cặp đôi', '<meta name="description" content="Photobook cặp đôi in tại Hà Nội · tự thiết kế trong vài phút">');
-page('admin.html', [...core, 'pdf', 'admin'], 'Our Archive · admin', noindex);
-page('duyet.html', [...core, 'duyet'], 'Our Archive · duyệt cuốn sách', noindex);
+page('index.html', [...core, 'account/customer-session', 'shop/boot'], 'Our Archive · photobook cặp đôi', '<meta name="description" content="Photobook cặp đôi in tại Hà Nội · tự thiết kế trong vài phút">');
+page('thanh-toan.html', [...core, 'checkout/boot'], 'Thanh toán · Our Archive', noindex);
+page('admin.html', [...core, 'admin/pdf', 'admin/admin'], 'Our Archive · admin', noindex);
+page('duyet.html', [...core, 'review/duyet'], 'Our Archive · duyệt cuốn sách', noindex);
+const accountStyle = '<style>' + read('account/account.css') + '</style>';
+for (const [route, title] of [['dang-nhap', 'Đăng nhập'], ['dang-ky', 'Tạo tài khoản']]) {
+  page(route + '.html', ['shared/config', 'account/customer-session', 'account/account'], title + ' · Our Archive', accountStyle + noindex);
+}
+for (const [route, title] of [['chinh-sach-du-lieu', 'Chính sách dữ liệu'], ['dieu-kien-giao-dich', 'Điều kiện giao dịch']]) {
+  page(route + '.html', ['shared/config', 'legal/policy-contact'], title + ' · Our Archive', accountStyle, read('legal/' + route + '.html'));
+}
 fs.writeFileSync(path.join(DIST, 'robots.txt'), 'User-agent: *\nDisallow: /admin\nDisallow: /duyet\n');
 
 console.log('stickers:', entries.length);

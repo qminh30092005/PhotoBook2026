@@ -1,0 +1,92 @@
+/* ---------- flipbook ---------- */
+.fb {
+  position: relative;
+  perspective: 2400px;
+  transition: transform 0.5s ease;
+}
+.fb.closed-front {
+  transform: translateX(calc(var(--pw) * -0.5));
+}
+.fb.closed-back {
+  transform: translateX(calc(var(--pw) * 0.5));
+}
+.leaf {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.45, 0.05, 0.25, 1);
+}
+.leaf.turned {
+  transform: rotateY(-180deg);
+}
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  background: #fffefb;
+}
+.fb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+.fb.closed-front::before {
+  left: 50%;
+}
+.fb.closed-back::before {
+  right: 50%;
+}
+.face.back {
+  transform: rotateY(180deg);
+}
+.face .page {
+  width: 100% !important;
+  height: 100% !important;
+}
+.face .shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.face.front .shade {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.08) 6%, rgba(0, 0, 0, 0) 14%);
+}
+.face.back .shade {
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.08) 6%, rgba(0, 0, 0, 0) 14%);
+}
+.leaf.turned .face.front .shade,
+.leaf:not(.turned) .face.back .shade {
+  opacity: 1;
+}
+.fb-gutter {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.25), transparent);
+  z-index: 999;
+  pointer-events: none;
+}
+.fb.closed-front .fb-gutter,
+.fb.closed-back .fb-gutter {
+  display: none;
+}
+
+.pv .ghost {
+  background: transparent;
+  color: #eee;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.pv .ghost:hover {
+  border-color: #fff;
+}

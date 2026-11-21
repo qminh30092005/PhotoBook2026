@@ -82,7 +82,7 @@ Cần chuẩn bị:
 1. Mở **GitHub Desktop** → chọn repo `PhotoBook2026`.
 2. Ghi một dòng mô tả ở ô *Summary* → **Commit to main** → **Push origin** (lần đầu là **Publish repository**, có thể để **Private**).
 
-Không cần sửa `src/config.js`: thông tin shop sẽ điền trên Vercel ở bước 7.
+Không cần sửa `src/shared/config.js`: thông tin shop sẽ điền trên Vercel ở bước 7.
 
 ## Bước 7 · Đưa web lên Vercel (miễn phí)
 

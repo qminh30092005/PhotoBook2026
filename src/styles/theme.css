@@ -1,0 +1,127 @@
+/* Giao diện: nền trắng, chữ xanh mực, điểm nhấn hồng mâm xôi. */
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f5f5f4;
+  --bg-sunk: #efefee;
+  --line: #e4e4e2;
+  --line-strong: #b9b9b6;
+  --ink: #0c1728;
+  --ink-2: #465263;
+  --ink-3: #586576;
+  --pill: var(--ink);
+  --on-pill: #ffffff;
+  --accent: #b51c50;
+  --accent-soft: #fbeff3;
+  --ok: var(--ink);
+  --warn: var(--accent);
+  --stage: #f2f2f1;
+  --endpaper: #3d3d3d;
+  --ui: 'Montserrat', system-ui, sans-serif;
+  --head: 'Mulish', 'Montserrat', system-ui, sans-serif;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--ui);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.hidden {
+  display: none !important;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 26px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--pill);
+  color: var(--on-pill);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.pill:hover {
+  background: #000;
+}
+.pill:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.pill.block {
+  width: 100%;
+}
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  font-weight: 600;
+  font-size: 12.5px;
+}
+.ghost:hover {
+  border-color: var(--ink);
+}
+.ghost.sm {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+.muted {
+  color: var(--ink-2);
+}
+.faint {
+  color: var(--ink-3);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--head);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.ic {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+.wrap {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}

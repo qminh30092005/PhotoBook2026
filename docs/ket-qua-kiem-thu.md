@@ -38,6 +38,6 @@ Ngày chạy: 21/11/2026. Máy: Windows 11, trình duyệt Chromium trong Claude
 
 - **Số liệu chi phí** trong dashboard là giá công bố trên web, tra ngày 21/11/2026. Phải thay bằng báo giá thật của 3 xưởng.
 - **Thuế:** các nguồn nói hộ kinh doanh doanh thu ≤ 500 triệu/năm được miễn GTGT + TNCN từ 2026, nhưng các nguồn chưa thống nhất. Hỏi chi cục thuế trước khi chốt.
-- **Gáy 6,8 / 8,5 / 10,2 mm** đang là số tạm. Đổi trong `src/pdf.js` (dòng `spine:`) khi có số của nhà in.
+- **Gáy 6,8 / 8,5 / 10,2 mm** đang là số tạm. Đổi trong `src/admin/pdf.js` (dòng `spine:`) khi có số của nhà in.
 - **Gmail thường** gửi khoảng 100 email/ngày qua Apps Script.
 - **PDF in** là ảnh 300ppi (chữ không phải vector) và hệ màu RGB, đúng như đã thống nhất. Nếu xưởng đòi CMYK hay chữ vector thì báo lại để làm thêm.
