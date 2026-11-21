@@ -145,9 +145,12 @@ const samples = require('node:vm').runInContext(`
 const covers = samples.map(({name, html}, position) =>
   `<div class="lp-cover" data-position="${position}" data-name="${name}" aria-hidden="true">${html}</div>`
 ).join('');
+const prices = require('node:vm').runInContext('TIERS', coverContext).map(tier =>
+  `<tr><th scope="row">${tier.pages} trang</th><td>${tier.max} ảnh</td><td>${tier.price.toLocaleString('vi-VN')} đ</td></tr>`
+).join('');
 page('index.html', ['shared/config', 'account/customer-session', 'landing/gallery'], 'Our Archive · Photobook cặp đôi',
   '<meta name="description" content="Khám phá photobook bìa cứng của Our Archive. Chọn bìa, kể chuyện bằng ảnh và xem lại cuốn sách trước khi in."><style>' + read('landing/landing.css') + '</style>',
-  read('landing/index.html').replace('<!-- covers -->', () => covers));
+  read('landing/index.html').replace('<!-- covers -->', () => covers).replace('<!-- prices -->', () => prices));
 page('thiet-ke.html', [...core, 'account/customer-session', 'shop/boot'], 'Thiết kế photobook · Our Archive', noindex);
 page('thanh-toan.html', [...core, 'checkout/boot'], 'Thanh toán · Our Archive', noindex);
 page('admin.html', [...core, 'admin/pdf', 'admin/admin'], 'Our Archive · admin', noindex);
