@@ -1,20 +1,19 @@
-/* Giao diện: nền hồng phấn, chữ đỏ rượu, điểm nhấn vàng nghệ. */
 :root {
-  --bg: #F3DDE2;
-  --bg-soft: #fbf2f4;
-  --bg-sunk: #ead0d8;
-  --line: #d9b9c4;
-  --line-strong: #a77b8c;
-  --ink: #591D35;
-  --ink-2: #704053;
-  --ink-3: #794e60;
-  --pill: var(--ink);
+  --bg: #FCE7EF;
+  --bg-soft: color-mix(in srgb, var(--bg) 55%, white);
+  --bg-sunk: #DBD0F5;
+  --line: color-mix(in srgb, var(--bg-sunk) 82%, var(--accent));
+  --line-strong: color-mix(in srgb, var(--accent) 70%, var(--bg-sunk));
+  --ink: color-mix(in srgb, var(--accent) 50%, black);
+  --ink-2: color-mix(in srgb, var(--accent) 78%, black);
+  --ink-3: var(--accent);
+  --pill: var(--accent);
   --on-pill: var(--bg);
-  --accent: #E5AC32;
-  --accent-soft: #f9ebc9;
+  --accent: #783E70;
+  --accent-soft: var(--bg-sunk);
   --ok: var(--ink);
   --warn: var(--ink);
-  --stage: #e9d2d9;
+  --stage: var(--bg-sunk);
   --endpaper: #3d3d3d;
   --ui: 'Montserrat', system-ui, sans-serif;
   --head: var(--ui);
@@ -71,8 +70,8 @@ button {
   letter-spacing: -0.01em;
 }
 .pill:hover {
-  background: var(--accent);
-  color: var(--ink);
+  background: var(--ink);
+  color: var(--on-pill);
 }
 .pill:disabled {
   opacity: 0.35;

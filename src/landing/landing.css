@@ -18,18 +18,18 @@
 .lp-intro{max-width:45ch;margin:1.5rem 0 2rem}
 .lp-actions{gap:22px;flex-wrap:wrap}
 .lp-button,.lp-link{font-weight:700;font-size:.95rem}
-.lp-button{background:var(--ink);color:var(--on-pill);border-radius:999px;padding:15px 23px;display:inline-flex;text-decoration:none}
-.lp-button:hover{background:var(--accent);color:var(--ink)}.lp-link{color:var(--ink);text-underline-offset:5px}
-.lp-display{margin:0;overflow:hidden;border-radius:5px;background:radial-gradient(ellipse at 25% 15%,#fbf2f4 0%,#ead0d8 55%,#d2a8b7 100%)}
+.lp-button{background:var(--pill);color:var(--on-pill);border-radius:999px;padding:15px 23px;display:inline-flex;text-decoration:none}
+.lp-button:hover{background:var(--ink);color:var(--on-pill)}.lp-link{color:var(--ink);text-underline-offset:5px}
+.lp-display{margin:0;overflow:hidden;border-radius:5px;background:radial-gradient(ellipse at 25% 15%,var(--bg-soft) 0%,var(--bg) 40%,var(--bg-sunk) 100%)}
 .lp-stage{aspect-ratio:1.28;position:relative;isolation:isolate}
-.lp-cover{width:43%;aspect-ratio:165/235;position:absolute;left:32%;top:49%;container-type:inline-size;transform-origin:center;transition:transform .45s ease;box-shadow:3px 4px 0 #eee,5px 6px 0 #bfc1c1,12px 17px 23px #591d3534}
+.lp-cover{width:43%;aspect-ratio:165/235;position:absolute;left:32%;top:49%;container-type:inline-size;transform-origin:center;transition:transform .45s ease;box-shadow:3px 4px 0 #eee,5px 6px 0 #bfc1c1,12px 17px 23px color-mix(in srgb, var(--accent) 20%, transparent)}
 .lp-cover .page{width:100%!important;height:100%!important;--u:calc(100cqw / 300)!important}
 .lp-cover:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0002,transparent 2%,#0001 3%,transparent 6%);pointer-events:none}
 .lp-cover[data-position="0"]{z-index:3;transform:translate(6%,-46%) rotate(8deg)}
 .lp-cover[data-position="1"]{z-index:2;transform:translate(-42%,-53%) rotate(-15deg)}
 .lp-cover[data-position="2"]{z-index:1;transform:translate(-14%,-55%) rotate(-4deg)}
 .lp-display figcaption{justify-content:space-between;gap:8px;padding:8px 22px 15px;font-weight:650;font-size:.9rem}
-.lp-controls{gap:6px}.lp-controls button:hover{background:var(--accent)}.lp-controls button{border:1px solid var(--line-strong);background:var(--bg-soft);color:var(--ink);border-radius:50%;width:44px;height:44px;font-size:24px;line-height:1}
+.lp-controls{gap:6px}.lp-controls button:hover{background:var(--accent);color:var(--on-pill)}.lp-controls button{border:1px solid var(--line-strong);background:var(--bg-soft);color:var(--ink);border-radius:50%;width:44px;height:44px;font-size:24px;line-height:1}
 .lp-main h2 { font-size: clamp(2.2rem, 4vw, 4rem); margin: 0; }
 .lp-facts {
   display: grid;
