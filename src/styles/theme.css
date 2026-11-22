@@ -1,7 +1,7 @@
 :root {
-  --bg: #FFF6E8;
+  --bg: #FAF6EF;
   --bg-soft: color-mix(in srgb, var(--bg) 55%, white);
-  --bg-sunk: #FFD3E2;
+  --bg-sunk: #E4D5BF;
   --line: color-mix(in srgb, var(--bg-sunk) 82%, var(--accent));
   --line-strong: color-mix(in srgb, var(--accent) 70%, var(--bg-sunk));
   --ink: color-mix(in srgb, var(--accent) 50%, black);
@@ -9,7 +9,7 @@
   --ink-3: var(--accent);
   --pill: var(--accent);
   --on-pill: var(--bg);
-  --accent: #157A45;
+  --accent: #702D43;
   --accent-soft: var(--bg-sunk);
   --ok: var(--ink);
   --warn: var(--ink);
