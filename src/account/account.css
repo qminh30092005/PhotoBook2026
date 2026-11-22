@@ -32,10 +32,9 @@ body:has(.policy-page) {
   margin-bottom: 20px;
   font-size: 12px;
 }
-.account-card .intro {
-  font-size: 15px;
-  margin: 10px 0 22px;
-  color: var(--ink-2);
+.account-card .auth-title {
+  font-size: clamp(28px, 5vw, 34px);
+  margin: 0 0 22px;
 }
 .social {
   display: flex;
@@ -124,6 +123,9 @@ body:has(.policy-page) {
   margin-top: 26px;
 }
 @media (max-width: 580px) {
+  .social {
+    flex-direction: column;
+  }
   .account-card,
   .policy-page {
     margin: 0 auto;

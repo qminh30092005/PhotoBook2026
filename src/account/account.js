@@ -30,12 +30,15 @@ function showAccount() {
   };
 }
 function showForm() {
-  shell(`<h1>${signup ? 'Tạo tài khoản' : 'Chào mừng trở lại'}</h1><p class="intro">${signup ? 'Tạo tài khoản Our Archive của bạn.' : 'Chọn Google hoặc Facebook để đăng nhập.'}</p>
-  <form><div class="social"><button type="button" data-provider="Google"><b class="google" aria-hidden="true">G</b>Google</button><button type="button" data-provider="Facebook"><b class="facebook" aria-hidden="true">f</b>Facebook</button></div>
-  <p class="fine">Thông tin đăng nhập được dùng để tạo, xác thực và bảo vệ tài khoản. Xem ${privacyLink}.</p>
-  ${signup ? `<label class="consent"><input type="checkbox" id="agree" required><span>Tôi đồng ý với ${privacyLink} và ${termsLink}.</span></label>` : `<small>Khi tiếp tục bằng Google hoặc Facebook, bạn đồng ý với ${privacyLink} và ${termsLink}.</small>`}
+  const actionLabel = signup ? 'Đăng ký với' : 'Đăng nhập với';
+  shell(`<h1 class="auth-title">${signup ? 'Tạo tài khoản' : 'Chào mừng trở lại'}</h1>
+  <form><div class="social">
+    <button type="button" data-provider="Google"><b class="google" aria-hidden="true">G</b>${actionLabel} Google</button>
+    <button type="button" data-provider="Facebook"><b class="facebook" aria-hidden="true">f</b>${actionLabel} Facebook</button>
+  </div>
+  ${signup ? `<label class="consent"><input type="checkbox" id="agree" required><span>Tôi đồng ý với ${privacyLink} và ${termsLink}.</span></label>` : `<p class="fine">Khi tiếp tục, bạn đồng ý với ${termsLink} và ${privacyLink}.</p>`}
   <p role="status"></p></form>
-  <p class="switch-account">${signup ? 'Đã có tài khoản? <a href="/dang-nhap">Đăng nhập</a>' : 'Chưa có tài khoản? <a href="/dang-ky">Đăng ký</a>'}</p>`);
+  ${signup ? '<p class="switch-account">Đã có tài khoản? <a href="/dang-nhap">Đăng nhập</a></p>' : ''}`);
   const form = root.querySelector('form');
   const agree = form.elements.agree;
   const status = form.querySelector('[role=status]');
