@@ -136,21 +136,33 @@ const coverContext = require('node:vm').createContext({});
 for (const name of ['shared/config', 'book/data', 'book/art', 'book/book']) {
   require('node:vm').runInContext(mod(name), coverContext);
 }
-const samples = require('node:vm').runInContext(`
-  ['hoian', 'dalat', 'camera'].map(id => {
-    const template = tplOf(id);
-    return { name: template.name, html: pageHTML({ bg: template.bg, frames: [], els: frontEls(template) }, 300) };
-  })
-`, coverContext);
-const covers = samples.map(({name, html}, position) =>
-  `<div class="lp-cover" data-position="${position}" data-name="${name}" aria-hidden="true">${html}</div>`
-).join('');
+const collections = [
+  { group: 'travel', label: 'Du lịch', title: 'Mang chuyến đi<br>về nhà.', copy: 'Từ phố nhỏ Hội An đến mùa hoa Đà Lạt, gom những nơi hai bạn đã đi vào một cuốn sách.', ids: ['hoian', 'dalat'] },
+  { group: 'memory', label: 'Kỷ niệm', title: 'Những ngày<br>có nhau.', copy: 'Một buổi hẹn, một cuộn film, một lá thư. Lật lại những ngày bình thường mà hai bạn muốn nhớ.', ids: ['camera', 'letter'] },
+  { group: 'wedding', label: 'Ngày cưới', title: 'Từ ngày mình<br>nói đồng ý.', copy: 'Kể lại câu chuyện từ chiếc nhẫn đầu tiên đến ngày hai bạn cùng bước vào lễ đường.', ids: ['ringbox', 'tulips'] },
+];
+const getLandingTemplate = require('node:vm').runInContext('tplOf', coverContext);
+function landingBook(id) {
+  const template = getLandingTemplate(id);
+  const html = coverContext.pageHTML({ bg: template.bg, frames: [], els: coverContext.frontEls(template) }, 300);
+  return { name: template.name, book: `<div class="lp-book" aria-hidden="true">${html}</div>` };
+}
+const slides = collections.map(({ group, label, title, copy, ids }, index) => `
+  <article class="lp-slide" data-group="${group}" ${index ? 'inert aria-hidden="true"' : 'data-active'}>
+    <div class="lp-story"><span class="lp-label">Photobook · ${label}</span><h2>${title}</h2>
+      <p>${copy}</p><a class="lp-button" href="/thiet-ke?bia=${ids[0]}">Tạo photobook</a></div>
+    <div class="lp-scene">${ids.slice().reverse().map(id => landingBook(id).book).join('')}</div>
+  </article>`).join('');
+const cards = collections.flatMap(({group, label, ids}) => ids.map(id => {
+  const { name, book } = landingBook(id);
+  return `<a class="lp-card" data-group="${group}" href="/thiet-ke?bia=${id}"><div class="lp-card-art">${book}</div><small>${label}</small><strong>${name}</strong></a>`;
+})).join('');
 const prices = require('node:vm').runInContext('TIERS', coverContext).map(tier =>
   `<tr><th scope="row">${tier.pages} trang</th><td>${tier.max} ảnh</td><td>${tier.price.toLocaleString('vi-VN')} đ</td></tr>`
 ).join('');
 page('index.html', ['shared/config', 'account/customer-session', 'legal/policy-contact', 'landing/gallery'], 'Our Archive · Photobook cặp đôi',
   '<meta name="description" content="Khám phá photobook bìa cứng của Our Archive. Chọn bìa, kể chuyện bằng ảnh và xem lại cuốn sách trước khi in."><style>' + read('landing/landing.css') + '</style>',
-  read('landing/index.html').replace('<!-- covers -->', () => covers).replace('<!-- prices -->', () => prices));
+  read('landing/index.html').replace('<!-- slides -->', () => slides).replace('<!-- cards -->', () => cards).replace('<!-- prices -->', () => prices));
 page('thiet-ke.html', [...core, 'account/customer-session', 'shop/boot'], 'Thiết kế photobook · Our Archive', noindex);
 page('thanh-toan.html', [...core, 'checkout/boot'], 'Thanh toán · Our Archive', noindex);
 page('admin.html', [...core, 'admin/pdf', 'admin/admin'], 'Our Archive · admin', noindex);

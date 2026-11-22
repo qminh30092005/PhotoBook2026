@@ -17,6 +17,8 @@
       new Promise((r) => setTimeout(r, 3500)),
     ]);
   } catch (e) {}
+  const cover = new URLSearchParams(location.search).get('bia');
+  if (S.screen === 'shop' && TPL.some(template => template.id === cover)) S.tpl = cover;
   render();
   try {
     checkPendingUpload();
