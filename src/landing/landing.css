@@ -110,7 +110,6 @@
   .lp-footer-brand p { max-width: 48ch; }
 }
 
-.lp-note { background:#253e37; color:white; text-align:center; padding:8px 12px; font-size:.875rem; }
 .lp-nav { background:#fff; }
 .lp-main { max-width:none; padding:0; }
 .lp-main > section:not(.lp-banner) { width:min(90%,1280px); margin-inline:auto; }
@@ -125,6 +124,10 @@
 .lp-story { max-width:34rem; position:relative; z-index:1; }
 .lp-label { display:block; margin-bottom:18px; font-size:.9rem; font-weight:650; }
 .lp-story h2 { font:500 clamp(3.2rem,5.8vw,6rem)/1.12 var(--head); letter-spacing:-.055em; color:inherit; }
+.lp-slide[data-group="travel"] .lp-story { container-type:inline-size; }
+.lp-slide[data-group="travel"] h2 { font-size:min(13cqi,6rem); }
+.lp-story h2 strong { font-weight:700; }
+.lp-story h2 em { color:var(--accent); }
 .lp-story p { max-width:39ch; margin:18px 0 25px; line-height:1.65; }
 .lp-story .lp-button { background:var(--type); color:white; }
 .lp-scene { position:relative; height:clamp(310px,31vw,475px); }

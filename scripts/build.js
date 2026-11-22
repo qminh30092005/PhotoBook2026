@@ -137,7 +137,7 @@ for (const name of ['shared/config', 'book/data', 'book/art', 'book/book']) {
   require('node:vm').runInContext(mod(name), coverContext);
 }
 const collections = [
-  { group: 'travel', label: 'Du lịch', title: 'Mang chuyến đi<br>về nhà.', copy: 'Từ phố nhỏ Hội An đến mùa hoa Đà Lạt, gom những nơi hai bạn đã đi vào một cuốn sách.', ids: ['hoian', 'dalat'] },
+  { group: 'travel', label: 'Du lịch', title: '<strong>Mang chuyến đi</strong><br><em>về nhà</em>', copy: 'Từ phố nhỏ Hội An đến mùa hoa Đà Lạt, gom những nơi hai bạn đã đi vào một cuốn sách.', ids: ['hoian', 'dalat'] },
   { group: 'memory', label: 'Kỷ niệm', title: 'Những ngày<br>có nhau.', copy: 'Một buổi hẹn, một cuộn film, một lá thư. Lật lại những ngày bình thường mà hai bạn muốn nhớ.', ids: ['camera', 'letter'] },
   { group: 'wedding', label: 'Ngày cưới', title: 'Từ ngày mình<br>nói đồng ý.', copy: 'Kể lại câu chuyện từ chiếc nhẫn đầu tiên đến ngày hai bạn cùng bước vào lễ đường.', ids: ['ringbox', 'tulips'] },
 ];
