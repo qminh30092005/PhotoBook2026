@@ -3,7 +3,10 @@ const root = document.getElementById('app');
 const privacyLink = '<a href="/chinh-sach-du-lieu" target="_blank" rel="noopener">Chính sách dữ liệu</a>';
 const termsLink = '<a href="/dieu-kien-giao-dich" target="_blank" rel="noopener">Điều kiện giao dịch</a>';
 function shell(content) {
-  root.innerHTML = `<main class="account-card"><a class="back-shop" href="/" aria-label="Trang chủ Our Archive"><img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive"></a>${content}</main>`;
+  root.innerHTML = `<main class="account-card"><header class="account-header">
+    <a class="account-back" href="/" aria-label="Về cửa hàng"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12H4m8-8-8 8 8 8"/></svg></a>
+    <img class="archive-signature" src="/our-archive.svg" width="252" height="60" alt="Our Archive">
+  </header>${content}</main>`;
 }
 const errors = {
   'auth/popup-closed-by-user': 'Bạn đã đóng cửa sổ đăng nhập.',
@@ -30,13 +33,18 @@ function showAccount() {
   };
 }
 function showForm() {
-  const actionLabel = signup ? 'Đăng ký với' : 'Đăng nhập với';
   shell(`<h1 class="auth-title">${signup ? 'Tạo tài khoản' : 'Chào mừng trở lại'}</h1>
+  <p class="account-intro">${signup ? 'Tạo tài khoản bằng Google hoặc Facebook.' : 'Đăng nhập hoặc tạo tài khoản bằng Google hoặc Facebook.'}</p>
   <form><div class="social">
-    <button type="button" data-provider="Google"><b class="google" aria-hidden="true">G</b>${actionLabel} Google</button>
-    <button type="button" data-provider="Facebook"><b class="facebook" aria-hidden="true">f</b>${actionLabel} Facebook</button>
+    <button type="button" data-provider="Google"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 48 48">
+      <path fill="#4285f4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.2h6.7c3.9-3.6 6-8.9 6-15.1Z"/>
+      <path fill="#34a853" d="M24 44c5.5 0 10.1-1.8 13.6-4.9l-6.7-5.2c-1.8 1.2-4 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.5H5.7v5.3A20.5 20.5 0 0 0 24 44Z"/>
+      <path fill="#fbbc05" d="M12.6 27.3a12.2 12.2 0 0 1 0-7.6v-5.3H5.7a20 20 0 0 0 0 18.2Z"/>
+      <path fill="#ea4335" d="M24 11.2c3 0 5.7 1 7.8 3.1l5.9-5.9A19.7 19.7 0 0 0 24 3 20.5 20.5 0 0 0 5.7 14.4l6.9 5.3c1.6-4.9 6.1-8.5 11.4-8.5Z"/>
+    </svg>Google</button>
+    <button type="button" data-provider="Facebook"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 320 512" fill="#1877f2"><path d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06H297V6.26S260.4 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>Facebook</button>
   </div>
-  ${signup ? `<label class="consent"><input type="checkbox" id="agree" required><span>Tôi đồng ý với ${privacyLink} và ${termsLink}.</span></label>` : `<p class="fine">Khi tiếp tục, bạn đồng ý với ${termsLink} và ${privacyLink}.</p>`}
+  ${signup ? `<label class="consent"><input type="checkbox" id="agree" required><span>Tôi đồng ý với ${privacyLink} và ${termsLink}.</span></label>` : `<p class="fine">Thông tin đăng nhập được dùng để tạo, xác thực và bảo vệ tài khoản.<br>Xem ${privacyLink}.</p>`}
   <p role="status"></p></form>
   ${signup ? '<p class="switch-account">Đã có tài khoản? <a href="/dang-nhap">Đăng nhập</a></p>' : ''}`);
   const form = root.querySelector('form');

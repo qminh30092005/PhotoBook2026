@@ -1,4 +1,11 @@
-body:has(.account-card),
+body:has(.account-card) {
+  --ink: #0c182b;
+  --ink-2: #53647c;
+  --line-strong: #d6deea;
+  --bg-soft: #fff;
+  background: #f5f6fa;
+  color: var(--ink);
+}
 body:has(.policy-page) {
   background: var(--bg-soft);
   color: var(--ink);
@@ -18,6 +25,35 @@ body:has(.policy-page) {
   font: 800 clamp(30px, 6vw, 40px)/1.12 var(--ui);
   letter-spacing: -0.045em;
 }
+.account-card {
+  width: calc(100% - 32px);
+  max-width: 560px;
+  margin: clamp(24px, 10vh, 64px) auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 28px;
+  box-shadow: 0 8px 30px rgb(25 44 75 / 3%);
+}
+.account-header {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  margin-bottom: 24px;
+}
+.account-header .archive-signature {
+  width: min(138px, 54%);
+  height: auto;
+}
+.account-back {
+  position: absolute;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+}
 .account-card a,
 .policy-page a {
   color: inherit;
@@ -33,8 +69,12 @@ body:has(.policy-page) {
   font-size: 12px;
 }
 .account-card .auth-title {
-  font-size: clamp(28px, 5vw, 34px);
-  margin: 0 0 22px;
+  margin: 0;
+}
+.account-intro {
+  margin: 10px 0 22px;
+  font-size: 16px;
+  color: #40516c;
 }
 .social {
   display: flex;
@@ -57,13 +97,6 @@ body:has(.policy-page) {
   background: var(--bg-soft);
   color: var(--ink);
 }
-.social b {
-  font: 900 24px Arial;
-}
-.google,
-.facebook {
-  color: var(--ink);
-}
 .fine,
 .consent,
 .switch-account,
@@ -71,7 +104,13 @@ body:has(.policy-page) {
   color: var(--ink-2);
   font-size: 13px;
 }
-.fine,
+.fine {
+  margin: 0;
+  line-height: 1.65;
+}
+.account-card [role='status']:empty {
+  margin: 0;
+}
 .consent {
   margin: 20px 0;
 }
@@ -123,14 +162,19 @@ body:has(.policy-page) {
   margin-top: 26px;
 }
 @media (max-width: 580px) {
-  .social {
-    flex-direction: column;
-  }
-  .account-card,
   .policy-page {
     margin: 0 auto;
     min-height: 100vh;
     border-radius: 0;
+  }
+}
+@media (max-width: 360px) {
+  .social {
+    gap: 8px;
+  }
+  .social button {
+    gap: 6px;
+    padding-inline: 4px;
   }
 }
 
@@ -139,5 +183,6 @@ body:has(.policy-page) {
   color: var(--ink);
 }
 .social button:hover {
-  box-shadow: inset 0 0 0 2px var(--accent);
+  background: #f5f7fb;
+  border-color: #a3b2c6;
 }
